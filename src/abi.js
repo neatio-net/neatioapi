@@ -1,13 +1,6 @@
 const Buffer = require('safe-buffer').Buffer;
 const utils = require('./utils');
 const uint256Coder = utils.uint256Coder;
-// const coderBoolean = utils.coderBoolean;
-// const coderFixedBytes = utils.coderFixedBytes;
-// const coderAddress = utils.coderAddress;
-// const coderDynamicBytes = utils.coderDynamicBytes;
-// const coderString = utils.coderString;
-// const coderArray = utils.coderArray;
-// const paramTypePart = utils.paramTypePart;
 const getParamCoder = utils.getParamCoder;
 
 function Result() {}
@@ -94,7 +87,6 @@ function decodeParams(names, types, data, useNumberedParams = true) {
 }
 
 let eventID = function (name, types) {
-    // FIXME: use node.js util.format?
     let sig = name + '(' + types.map((value) => value).join(',') + ')'
     return utils.keccak256(Buffer.from(sig))
 }
