@@ -51,7 +51,7 @@ const signingData = tx => {
     tx.to ? Bytes.fromNat(tx.to) : "0x",
     Bytes.fromNat(tx.value),
     tx.data,
-    Bytes.fromNat(tx.chainId || "0x203"),
+    Bytes.fromNat(tx.chainId || "0x1"),
     "0x",
     "0x"
   ]);
@@ -64,7 +64,7 @@ const signingCallData = tx => {
     tx.to ? Bytes.fromNat(tx.to) : "0x",
     Bytes.fromNat(tx.value),
     tx.data,
-    Bytes.fromNat(tx.chainId || "0x203"),
+    Bytes.fromNat(tx.chainId || "0x1"),
     "0x",
     "0x"
   ]);
@@ -72,14 +72,14 @@ const signingCallData = tx => {
 
 const sign = (tx, account) => {
   const data = signingData(tx);
-  const signature = Account.makeSigner(Nat.toNumber(tx.chainId || "0x203") * 2 + 35)(keccak256(data), account.privateKey);
+  const signature = Account.makeSigner(Nat.toNumber(tx.chainId || "0x1") * 2 + 35)(keccak256(data), account.privateKey);
   const rawTransaction = RLP.decode(data).slice(0,6).concat(Account.decodeSignature(signature));
   return RLP.encode(rawTransaction);
 };
 
 const signCall = (tx, account) => {
   const data = signingCallData(tx);
-  const signature = Account.makeSigner(Nat.toNumber(tx.chainId || "0x203") * 2 + 35)(keccak256(data), account.privateKey);
+  const signature = Account.makeSigner(Nat.toNumber(tx.chainId || "0x1") * 2 + 35)(keccak256(data), account.privateKey);
   const rawTransaction = RLP.decode(data).slice(0,6).concat(Account.decodeSignature(signature));
   return RLP.encode(rawTransaction);
 };
@@ -95,8 +95,8 @@ const recover = (rawTransaction) => {
 };
 
 module.exports = {
+  addDefaults,
   sign,
   signCall,
-  recover,
-  addDefaults,
+  recover
 };
