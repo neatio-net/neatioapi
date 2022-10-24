@@ -17,7 +17,7 @@ const send = url => (method, params) => {
     json: "json",
     body: genPayload(method,params)
   }).then(answer => {
-    var resp = answer; // todo: use njsp?
+    var resp = answer;
     if (resp.error) {
       throw new Error(resp.error.message);
     } else {
