@@ -8,7 +8,7 @@
 npm i neatioapi
 ```
 
-In order to install a certain version type add "@version_number" i.e.
+In order to install a certain version add "@version_number" i.e.
 
 ```bash
 npm i neatioapi@2.1.0
