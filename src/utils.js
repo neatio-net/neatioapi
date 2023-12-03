@@ -539,7 +539,7 @@ function toWei(neatInput, unit) {
  * @param {Number|String} number can be a number, number string or a HEX of a decimal
  * @return {String|Object} When given a BN object it returns one as well, otherwise a number
  */
-var fromNEAT = function(number) {
+var fromNio = function(number) {
     if(!isBN(number) && !_.isString(number)) {
         throw new Error('Please pass numbers as strings or BN objects to avoid precision errors.');
     }
@@ -549,11 +549,11 @@ var fromNEAT = function(number) {
 
 /**
  *
- * @method toNEAT
+ * @method toNio
  * @param {Number|String|BN} number can be a number, number string or a HEX of a decimal
  * @return {String|Object} When given a BN object it returns one as well, otherwise a number
  */
-var toNEAT = function(number) {
+var toNio = function(number) {
     if(!isBN(number) && !_.isString(number)) {
         throw new Error('Please pass numbers as strings or BN objects to avoid precision errors.');
     }
@@ -916,8 +916,8 @@ var sha3Raw = function(value) {
 module.exports = {
     BN,
     isBN,
-    fromNEAT,
-    toNEAT,
+    fromNio,
+    toNio,
     stringToHex,
     hexToString,
     bnToBuffer,

@@ -1,7 +1,7 @@
 {
   "name": "neatioapi",
-  "version": "2.1.0",
-  "description": "NEAT JavaScript API",
+  "version": "3.0.0",
+  "description": "Neatio JavaScript API",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha test/test.js",
@@ -12,11 +12,11 @@
     "url": "git+https://github.com/neatlab/neatioapi.git"
   },
   "keywords": [
-    "NEAT",
+    "Neatio",
     "JavaScript",
     "API"
   ],
-  "author": "luckas83@neatio.net",
+  "author": "contact@neatio.net",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/neatlab/neatioapi/issues"

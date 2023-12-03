@@ -1,4 +1,4 @@
-# NEAT JavaScript API 2.0
+# Neatio JavaScript API 3.0
 
 ## Now available as Node Package Manager
 
@@ -11,7 +11,7 @@ npm i neatioapi
 In order to install a certain version add "@version_number" i.e.
 
 ```bash
-npm i neatioapi@2.1.0
+npm i neatioapi@3.0.0
 ```
 
 ## License
